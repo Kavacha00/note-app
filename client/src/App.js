@@ -64,7 +64,6 @@ const App = () => {
 
   const handleAddNote = async (note) => {
     try {
-      //console.log("note: ", note);
       const response = await fetch('http://localhost:3001/api/notes', {
         method: 'POST',
         headers: {
@@ -78,7 +77,6 @@ const App = () => {
         console.log('Dodano notatkę');
         const newNote = await response.json();
         setNotes((prevNotes) => [...prevNotes, newNote]);
-        //console.log("newnote: ", newNote);
       } else {
         console.error('Błąd dodawania notatki');
       }
