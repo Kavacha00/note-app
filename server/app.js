@@ -73,14 +73,18 @@ app.post(
     const username = req.user.username;
 
     try {
-      const note = new Note({ title, content, username }); 
+      const note = new Note({ title, content, username });
       await note.save();
-      res.json(note);
+      
+      const notes = await Note.find({ username: req.user.username });
+      
+      res.json(notes);
     } catch (err) {
       res.status(500).json({ error: 'Wystąpił błąd podczas tworzenia notatki' });
     }
   }
 );
+
 
 // Trasa PUT dla aktualizacji notatki (chroniona)
 app.put('/api/notes/:id', authenticateToken, async (req, res) => {

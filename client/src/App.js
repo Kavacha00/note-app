@@ -54,6 +54,7 @@ const App = () => {
         const data = await response.json();
         setAccessToken(data.accessToken);
         setShowRegisterForm(false);
+        setUsername(username);
       } else {
         console.error('Błąd rejestracji');
       }
@@ -137,8 +138,7 @@ const App = () => {
               position: 'absolute',
               bottom: '50%',
               left: '50%',
-              transform: 'translate(-50%, 50%)'}}
-              className = "text-with-outline">
+              transform: 'translate(-50%, 50%)'}}>
                 <h3>Zapisz swoje notatki</h3>
                 <p>Nasza strona umożliwia zapisywanie notatek.</p>
               </Carousel.Caption>
@@ -156,8 +156,7 @@ const App = () => {
               position: 'absolute',
               bottom: '50%',
               left: '50%',
-              transform: 'translate(-50%, 50%)'}}
-              className = "text-with-outline">
+              transform: 'translate(-50%, 50%)'}}>
                 <h3>Edytuj swoje notatki</h3>
                 <p>Nasza strona umożliwia edytowanie notatek.</p>
               </Carousel.Caption>
@@ -175,8 +174,7 @@ const App = () => {
               position: 'absolute',
               bottom: '50%',
               left: '50%',
-              transform: 'translate(-50%, 50%)'}}
-              className = "text-with-outline">
+              transform: 'translate(-50%, 50%)'}}>
                 <h3>Usuwaj niepotrzebne notatki.</h3>
                 <p>
                   Nasza strona umożliwia usuwanie notatek.

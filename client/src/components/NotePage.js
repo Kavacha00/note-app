@@ -72,6 +72,9 @@ const NotePage = ({ token, handleAddNote, username }) => {
         </Container>
       </Navbar>
       <div>
+        Witaj, {username}!
+      </div>
+      <div>
         <NoteList
           notes={notes}
           username={username}
