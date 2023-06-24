@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const User = require('./models/User');
+const Note = require('./models/Note');
 const jwt = require('jsonwebtoken');
 const express = require('express');
 const app = express();
@@ -13,12 +14,6 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
 });
 
-// Definicja modelu notatki
-const Note = mongoose.model('Note', {
-  title: String,
-  content: String,
-  username: String,
-});
 
 app.use(express.json());
 
